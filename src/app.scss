@@ -1,1 +1,17 @@
 @import "bootstrap";
+
+
+.index{
+  h1{
+    width: 100%;
+  }
+}
+
+.show_room{
+  .row{
+    height: 100vh;
+  }
+  .card{
+    margin: auto;
+  }
+}

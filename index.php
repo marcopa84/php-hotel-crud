@@ -1,7 +1,7 @@
 <?php
   include 'partials/header.php';
  ?>
-<body>
+<body class="index">
   <div class="container">
     <div class="col-12">
       <div class="row text-center">
@@ -31,9 +31,9 @@
                   <td><a href="show/room.php?id=<?php echo $room['id']; ?>">Dettagli</a></td>
                   <td><a href="#">Aggiorna</a></td>
                   <td>
-                    <form  action="index.html" method="post">
-                      <input type="hidden" name="id" value="ID DA PHP">
-                      <input type="submit" name="id" value="Cancella" class="btn btn-danger">
+                    <form  action="query/delete.php" method="post">
+                      <input type="hidden" name="id" value="<?php echo $room['id']; ?>">
+                      <input type="submit" value="Cancella" class="btn btn-danger">
                     </form>
                   </td>
                 </tr>

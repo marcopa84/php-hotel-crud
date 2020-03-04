@@ -1,7 +1,7 @@
 <?php
   include '../partials/header.php';
  ?>
- <body>
+ <body class="show_room">
    <div class="container">
      <div class="col-12">
        <div class="row">

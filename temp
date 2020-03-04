@@ -1,0 +1,8 @@
+
+
+
+  <?php include 'query/read.php'; ?>
+
+  <?php foreach ($read_result as $room) {
+    var_dump($room);
+  } ?>

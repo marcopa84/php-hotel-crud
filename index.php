@@ -26,7 +26,7 @@
                   <td><?php echo $room['id']; ?></td>
                   <td><?php echo $room['room_number']; ?></td>
                   <td><?php echo $room['floor']; ?></td>
-                  <td><a href="query/show.php?id=<?php echo $room['id']; ?>">Dettagli</a></td>
+                  <td><a href="room.php?id=<?php echo $room['id']; ?>">Dettagli</a></td>
                   <td><a href="#">Aggiorna</a></td>
                   <td>
                     <form  action="index.html" method="post">

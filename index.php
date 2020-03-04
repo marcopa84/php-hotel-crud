@@ -4,8 +4,10 @@
 <body>
   <div class="container">
     <div class="col-12">
+      <div class="row text-center">
+          <h1 class="text-center">Benvenuti in Hotel Booleana</h1>
+      </div>
       <div class="row">
-        <h1>Benvenuti in Hotel Booleana</h1>
         <table class="table">
           <thead>
             <tr>
@@ -26,7 +28,7 @@
                   <td><?php echo $room['id']; ?></td>
                   <td><?php echo $room['room_number']; ?></td>
                   <td><?php echo $room['floor']; ?></td>
-                  <td><a href="room.php?id=<?php echo $room['id']; ?>">Dettagli</a></td>
+                  <td><a href="show/room.php?id=<?php echo $room['id']; ?>">Dettagli</a></td>
                   <td><a href="#">Aggiorna</a></td>
                   <td>
                     <form  action="index.html" method="post">

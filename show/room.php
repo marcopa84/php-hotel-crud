@@ -1,12 +1,12 @@
 <?php
-  include 'partials/header.php';
+  include '../partials/header.php';
  ?>
  <body>
    <div class="container">
      <div class="col-12">
        <div class="row">
          <?php
-         include 'query/show_room.php';
+         include '../query/show_room.php';
          foreach ($show_room_result as $room) {?>
 
            <div class="card" style="width: 18rem;">

@@ -1,18 +1,30 @@
 <?php
   include 'database.php';
-  $room_id = $_POST['id'];
 
-  $sql = "DELETE FROM `stanze` WHERE `stanze`.`id` = $room_id";
-  $result = $conn->query($sql);
-
-  if (!empty($room_id)) {
-    if ($result) {
-      echo"Ithems deleted: ".$result." ithem";
-    }else {
-    echo "query error";
-    }
+  if(empty($_POST['id'])) {
+    die('Id non corretto');
   }
 
+  $roomId = $_POST['id'];
+
+  //controlliamo che l'id esiste
+  $sql = "SELECT * FROM `stanze` WHERE `id`='$roomId'";
+
+  $result = $conn->query($sql);
+
+  if ($result && $result->num_rows == 0) {
+    die('Id non corretto');
+  } 
+
+  $sql = "DELETE FROM `stanze` WHERE `stanze`.`id` = '$roomId'";
+  $result = $conn->query($sql);
+
+  if($result) {
+    // echo 'OK';
+      header("Location: $basePath?roomNumber=$roomId");
+    } else {
+      echo 'KO';
+    }
 
   $conn->close();
  ?>

@@ -2,9 +2,9 @@
 include 'partials/header.php';
 ?>
 
-<?php if (!empty($_GET['roomNumber'])) { ?>
+<?php if (!empty($_GET['roomNumberDelete'])) { ?>
   <div class="alert alert-danger">
-    Hai cancellato la stanza id : <?php echo $_GET['roomNumber'] ?>
+    Hai cancellato la stanza id : <?php echo $_GET['roomNumberDelete'] ?>
   </div>
 <?php } ?>
 <?php if (!empty($_GET['roomNumberUpdate'])) { ?>
@@ -14,21 +14,20 @@ include 'partials/header.php';
 <?php } ?>
 <?php if (!empty($_GET['roomInsert'])) { ?>
   <div class="alert alert-success">
-    Hai aggiunto la stanza 
+    Hai aggiunto la stanza
   </div>
 <?php } ?>
 <div class="container index">
-  <div class="col-12">
-    <div class="row text-center">
-      <h1 class="text-center">Benvenuti in Hotel Booleana</h1>
-    </div>
-    <div class="row">
+  <div class="row">
+    <!-- Rooms column -->
+    <div class="col-6">
+      <p class="h3">Rooms</p>
       <table class="table">
         <thead>
           <tr>
             <td>ID</td>
-            <td>Numero Stanza</td>
-            <td>Piano</td>
+            <td>Room Number</td>
+            <td>Floor</td>
             <td></td>
             <td></td>
             <td></td>
@@ -38,7 +37,7 @@ include 'partials/header.php';
           <?php
           include 'query/read.php';
 
-          foreach ($read_result as $room) { ?>
+          foreach ($room_results as $room) { ?>
             <tr>
               <td><?php echo $room['id']; ?></td>
               <td><?php echo $room['room_number']; ?></td>
@@ -56,8 +55,44 @@ include 'partials/header.php';
         </tbody>
       </table>
     </div>
+    <!-- Prenotations column -->
+    <div class="col-6">
+      <p class="h3">Prenotations</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <td class="text-nowrap">ID</td>
+            <td class="text-nowrap">Room ID</td>
+            <td>Create at</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($prenotations_results as $prenotation) { ?>
+            <tr>
+              <td><?php echo $prenotation['id']; ?></td>
+              <td><?php echo $prenotation['stanza_id']; ?></td>
+              <td><?php echo $prenotation['created_at']; ?></td>
+              <td><a href="show/prenotation.php?id=<?php echo $prenotation['id']; ?>">Details</a></td>
+              <td><a href="update/prenotation.php?id=<?php echo $prenotation['id']; ?>">Update</a></td>
+              <td>
+                <form action="query/deleteTODO.php" method="post">
+                  <input type="hidden" name="id" value="<?php echo $prenotation['id']; ?>">
+                  <input type="submit" value="Cancella" class="btn btn-danger">
+                </form>
+              </td>
+            </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+
+
 
 <?php
 include 'partials/footer.php';

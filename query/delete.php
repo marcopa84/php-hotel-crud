@@ -21,7 +21,7 @@
 
   if($result) {
     // echo 'OK';
-      header("Location: $basePath?roomNumber=$roomId");
+      header("Location: $basePath?roomNumberDelete=$roomId");
     } else {
       echo 'KO';
     }

@@ -6,8 +6,8 @@
      <div class="col-12">
        <div class="row">
          <?php
-         include '../query/show_room.php';
-         foreach ($show_room_result as $room) {?>
+         include '../query/show.php';
+         foreach ($show_room_results as $room) {?>
 
            <div class="card" style="width: 18rem;">
               <div class="card-body">

@@ -1,6 +1,19 @@
 <?php
   include 'database.php';
-  $room_id = $_GET['id'];
+  include 'functions.php';
+
+  if($_GET['room_id']){
+    $room_id = $_GET['room_id'];
+    $show_room_results = getById($conn, 'stanze', $room_id);
+    var_dump($show_room_results);
+  }
+  if($_GET['prenotation_id']){
+    $prenotation_id = $_GET['prenotation_id'];
+    $show_prenotation_results = getById($conn, 'prenotazioni', $prenotation_id);
+    var_dump($show_prenotation_results);
+  }
+
+  /* $room_id = $_GET['id'];
 
   $sql = "SELECT * FROM stanze WHERE id= $room_id";
   $result = $conn->query($sql);
@@ -15,6 +28,6 @@
   echo "0 results";
   } else {
   echo "query error";
-  }
+  } */
   $conn->close();
  ?>

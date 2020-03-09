@@ -20,7 +20,7 @@ include 'partials/header.php';
 <div class="container index">
   <div class="row">
     <!-- Rooms column -->
-    <div class="col-6">
+    <div class="col-12" id="rooms">
       <p class="h3">Rooms</p>
       <table class="table">
         <thead>
@@ -42,7 +42,7 @@ include 'partials/header.php';
               <td><?php echo $room['id']; ?></td>
               <td><?php echo $room['room_number']; ?></td>
               <td><?php echo $room['floor']; ?></td>
-              <td><a href="show/room.php?id=<?php echo $room['id']; ?>">Details</a></td>
+              <td><a href="show/room.php?room_id=<?php echo $room['id']; ?>">Details</a></td>
               <td><a href="update/room.php?id=<?php echo $room['id']; ?>">Update</a></td>
               <td>
                 <form action="query/delete.php" method="post">
@@ -55,8 +55,10 @@ include 'partials/header.php';
         </tbody>
       </table>
     </div>
+  </div>
+  <div class="row">
     <!-- Prenotations column -->
-    <div class="col-6">
+    <div class="col-12" id="prenotations">
       <p class="h3">Prenotations</p>
       <table class="table">
         <thead>

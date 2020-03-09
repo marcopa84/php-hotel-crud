@@ -2,10 +2,10 @@
 include '../partials/header.php';
 ?>
 
-<div class="container show_room">
+<div class="container">
   <div class="col-12">
     <div class="row">
-      <div class="card" style="width: 18rem;">
+      <div class="card">
         <div class="card-body">
           <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/154/154807342.jpg" class="card-img-top" alt="example room">
           <form action="<?php echo $basePath ?>/query/insert.php" method="GET">

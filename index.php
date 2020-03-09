@@ -78,7 +78,7 @@ include 'partials/header.php';
               <td><?php echo $prenotation['id']; ?></td>
               <td><?php echo $prenotation['stanza_id']; ?></td>
               <td><?php echo $prenotation['created_at']; ?></td>
-              <td><a href="show/prenotation.php?id=<?php echo $prenotation['id']; ?>">Details</a></td>
+              <td><a href="show/prenotation.php?prenotation_id=<?php echo $prenotation['id']; ?>">Details</a></td>
               <td><a href="update/prenotation.php?id=<?php echo $prenotation['id']; ?>">Update</a></td>
               <td>
                 <form action="query/deleteTODO.php" method="post">

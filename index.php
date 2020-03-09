@@ -12,6 +12,11 @@ include 'partials/header.php';
     Hai aggiornato la stanza id : <?php echo $_GET['roomNumberUpdate'] ?>
   </div>
 <?php } ?>
+<?php if (!empty($_GET['roomInsert'])) { ?>
+  <div class="alert alert-success">
+    Hai aggiunto la stanza 
+  </div>
+<?php } ?>
 <div class="container index">
   <div class="col-12">
     <div class="row text-center">
